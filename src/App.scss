@@ -1,0 +1,652 @@
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+body{
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+.mouse {
+    width: 50%;
+    height: 50%;
+}
+
+.scroll {
+    animation-name: scroll;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0.650, -0.550, 0.250, 1.500);
+    animation-iteration-count: infinite;
+    transform-origin: 50% 20.5px;
+    will-change: transform, opacity;
+    opacity: 1;
+}
+
+.scroll-link {
+    position: fixed;
+    top: 60vh;
+    left: 95.6%;
+    transform: translateX(-50%);
+}
+
+@keyframes scroll {
+
+    0%, 20% {
+        transform: translateY(0) scaleY(1);
+    }
+
+    100% {
+        transform: translateY(36px) scaleY(2);
+        opacity: 0;
+    }
+
+}
+
+.snow {
+    position: absolute;
+    min-width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.snow .svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#snow-top-layer {
+    will-change: transform;
+    transform: translateY(-768px);
+    animation: fall 22.5s infinite linear;
+}
+
+#snow-bottom-layer {
+    will-change: transform;
+    transform: translateY(-768px);
+    animation: fall 45s infinite linear;
+}
+
+@keyframes fall {
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+.App {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    position: relative;
+}
+
+#box {
+    left: 0vw;
+    height: 400vh;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin: auto;
+    transition: 0.5s;
+}
+
+#firstPage {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #d2e8e7;
+}
+
+.mainTitle {
+    width: 70%;
+    height: 40%;
+    margin: auto;
+    color: white;
+    background-image: url("img/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    top: 10vh;
+}
+
+.mainbtn {
+    width: 30vw;
+    height: 8vh;
+    color: white;
+    border-radius: 2vw;
+    background-color: #60D9A2;
+    font-size: 2.3vw;
+    margin: 2vh auto;
+    cursor: pointer;
+    position: relative;
+    top: 15vh;
+    padding-top: 1vh;
+    transition: 0.5s;
+}
+
+.mainbtn:hover {
+    scale: 1.1;
+    color: black;
+}
+
+#firstPage span {
+    color: gray;
+    cursor: pointer;
+    position: relative;
+    top: 16vh;
+    font-size: 1vw;
+    &:hover{
+        color: black;
+    }
+}
+
+#dummy {
+    width: 100vw;
+    height: 400vh;
+    position: absolute;
+    left: 0;
+    top: 0vh;
+    background-color: black;
+    opacity: 0.4;
+}
+
+@keyframes showbox {
+    0% {
+        top: 100%
+    }
+    100% {
+        top: 0%
+    }
+}
+
+.logjoinpage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 30vw;
+    height: 80vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    box-shadow: 0 0 6px 0 white;
+    border-radius: 3vw;
+    z-index: 99;
+    animation: showbox 0.5s forwards;
+}
+
+.closebtn {
+    position: absolute;
+    position: fixed;
+    right: 5%;
+    top: 1%;
+    font-size: 2vw;
+    cursor: pointer;
+    color: white;
+}
+
+.closebtn:hover {
+    scale: 1.1;
+}
+
+.logjointitle {
+    width: 60%;
+    height: 20%;
+    margin: auto;
+    margin-top: 8vh;
+    background-image: url("img/logo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logjoinpage .req {
+    width: 60%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.logjoinpage .req input {
+    width: 95%;
+    height: 10%;
+    margin-top: 5vh;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: solid gray;
+    opacity: 0.5;
+    padding-left: 5%;
+}
+
+.logjoinpage .req button {
+    width: 100%;
+    height: 12%;
+    border-radius: 1vw;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 100%;
+    border: 0;
+    background-color: #FEEBB6;
+    margin-top: 9vh;
+    color: gray;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.logjoinpage .req button:hover {
+    background-color: #FECCBE;
+    scale: 1.1;
+    color: black;
+}
+
+#mainlogo {
+    width: 10%;
+    height: 10%;
+    background-image: url("img/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: 0;
+    top: 0;
+    position: fixed;
+    cursor: pointer;
+}
+
+#mainlogintext {
+    width: 10%;
+    height: 5%;
+    position: fixed;
+    right: 0;
+    top: 2vh;
+    font-size: 1.2vw;
+    color: white;
+    cursor: pointer;
+}
+
+#mainlogintext:hover {
+    scale: 1.1;
+}
+#pageTop{
+    position: fixed;
+    display: flex;
+    transition: all 1s;
+    justify-content: space-between;
+    width: 100%;
+    height: 8%;
+    z-index: 1;
+    background-color: white;
+    border-bottom: 1px solid rgba(black,0.1);
+    #logoTop{
+        width: 10%;
+        height: 100%;
+        background-image: url("img/logo.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    #loginBoxTop{
+        width: 15%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .loginTop{
+            color: white;
+            background-color: #60D9A2;
+            width: 40%;
+            height: 60%;
+            font-size: 2vh;
+            border-radius: 2vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s;
+            &:hover{
+                cursor: pointer;
+                scale: 1.1;
+                color: black;
+            }
+        }
+    }
+}
+#seccondPage {
+    width: 100vw;
+    height: 100vh;
+    background-color: #EEEEEE;
+    display: flex;
+}
+
+
+#pagechangebtn {
+    width: 5vw;
+    height: 20vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    left: 95%;
+    top: 40%;
+    text-align: center;
+
+    button{
+        width: 0.5vw;
+        height: 0.5vw;
+        border-radius: 0.5vw;
+        background-color: white;
+        border: 0;
+        cursor: pointer;
+        &:hover{
+            scale: 1.1;
+        }
+    }
+}
+
+#left:hover, #right:hover {
+    opacity: 1;
+}
+
+#firstPageImg {
+    background-image: url("img/firstDog.png");
+    width: 50vw;
+    height: 110vh;
+    left: 25vw;
+    bottom: 15vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    transition: 2s;
+}
+#firstPageTextBox{
+    width: 30vw;
+    height: 50vh;
+    margin-left: 10vw;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10%;
+    text-align: left;
+    opacity: 0;
+    transition: 2s;
+    .textTop{
+        font-size: 4vw;
+        font-weight: bold;
+    }
+    .textBot{
+        font-size: 2vw;
+        color: grey;
+        margin-top: 2vh;
+    }
+}
+#seccondPageTextBox {
+    margin: auto;
+    width: 30vw;
+    height: 50vh;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10%;
+    text-align: left;
+    opacity: 0;
+    transition: 2s;
+    .textTop{
+        font-size: 4vw;
+        font-weight: bold;
+    }
+    .textBot{
+        font-size: 2vw;
+        color: grey;
+        margin-top: 2vh;
+    }
+}
+#fourthPageTextBox{
+    width: 30vw;
+    height: 50vh;
+    margin-left: 10vw;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10%;
+    text-align: left;
+    opacity: 0;
+    transition: 2s;
+    .textTop{
+        font-size: 4vw;
+        font-weight: bold;
+    }
+    .textBot{
+        font-size: 2vw;
+        color: grey;
+        margin-top: 2vh;
+    }
+}
+#firstPageTitle {
+    font-size: 5vw;
+}
+.btnGo:hover {
+    background-color: gray;
+    scale: 1.1;
+}
+
+#thirdPage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #d2e8e7;
+}
+
+
+#seccondPageImg {
+    background-image: url("img/like.png");
+    width: 70vw;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0;
+    transition: 2s;
+}
+
+#fourthPage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: #EEEEEE;
+}
+
+#thirdPageTitle {
+    font-size: 5vw;
+}
+
+#thirdPageImg {
+    background-image: url("img/loginImg.png");
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: 2s;
+}
+
+#listpage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu{
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(black,0.05);
+    width: 6vw;
+    height: 100%;
+}
+#menubox{
+    width: 6vw;
+    height: 58%;
+    margin-top: 1.1vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+.menulist{
+    width: 100%;
+    display: flex;
+    padding-top: 1vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+    &:hover{
+        color: #60D9A2;
+        cursor: pointer;
+    }
+    p{
+        font-size: 1vw;
+    }
+    &.active{
+        background-color: #60D9A2;
+        &:hover{
+            color: grey;
+        }
+
+    }
+}
+#logobox{
+    width: 100%;
+    height: 8%;
+    background-image: url("img/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+#loginbox{
+    width: 100%;
+    height: 10%;
+    padding-top: 1vh;
+    background-color: #60D9A2;
+    color: gray;
+    position: absolute;
+    bottom: 0;
+    &:hover{
+        cursor: pointer;
+    }
+    p{
+        font-size: 1vw;
+    }
+
+}
+.material-symbols-outlined {
+    font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 1,
+            'opsz' 48;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listPageWrapper{
+    .topBar{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 9%;
+        border-bottom: 1px solid rgba(black,0.05);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .iconBox{
+            margin: 1vw;
+            color: gray;
+            cursor: pointer;
+            &:hover{
+                color: #60D9A2;
+            }
+        }
+    }
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    .innerbox{
+        margin-left: 15vw;
+        width: 70vw;
+        height: 70vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap: 6vh;
+        grid-column-gap: 1vw;
+        align-items: center;
+        justify-items: center;
+        .obj{
+            margin-top: 3vh;
+            width: 15vw;
+            height: 15vw;
+            background-size: cover;
+            background-position: center;
+        }
+        .anisp{
+            text-align: left;
+            font-size: 1.1vw;
+        }
+    }
+    .pageChangeBtn{
+        width: 5vw;
+        height: 15vw;
+        display: flex;
+        flex-direction: column;
+        margin-right: 5vw;
+        margin-top: 9vh;
+        button{
+            width: 100%;
+            height: 50%;
+            background-color: white;
+            color: gray;
+            border: none;
+            cursor: pointer;
+            &:hover{
+                scale: 1.1;
+                color: black;
+            }
+        }
+    }
+
+}
+
+.innerbox02{
+    border: 1px solid rgba(black,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1vw;
+    margin: 10vh auto;
+    width: 80vw;
+    height: 90vh;
+
+}
